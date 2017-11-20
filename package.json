@@ -1,0 +1,7 @@
+{
+  "name": "NBG-API",
+  "version": "1.0.0",
+  "description": "RESTful API to manage NBG page redesign",
+  "main": "index.js",
+  "license": "MIT"
+}

@@ -15,9 +15,10 @@ bol.catalog.search ({ q: 'Web Developer' }, function (err, data) {
   for (var p in data.products) {
     var product = data.products[p];
     console.log (product.title + ' - €' + product.offerData.offers[0].price);
+    
     io.emit('action', {
             	type: 'UPDATE_BOOKS',
-            	payload: item,
+            	payload: product.title,
             })
   }//for
 }) //bolcatalog
@@ -25,6 +26,8 @@ bol.catalog.search ({ q: 'Web Developer' }, function (err, data) {
 io.on('connection', socket => {
     console.log('got connection')
   })
+
+
 
 /*const express = require('express')
 

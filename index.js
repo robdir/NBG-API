@@ -1,11 +1,14 @@
 var bol = require ('bolcom') ('1673B7353F954E90916BFD4931E48C2A');
 const express = require('express')
+const cors = require('cors')
 
 const PORT = process.env.PORT || 3030
 
 let app = express()
-
 var books = []
+
+app.use(cors())
+
 
   bol.catalog.search ({ q: 'Web Developer' }, function (err, data) {
     if (err) {

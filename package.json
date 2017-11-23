@@ -5,12 +5,17 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "seed": "node db/seed.js"
   },
   "dependencies": {
     "bolcom": "^1.2.1",
     "express": "^4.16.2",
+    "mongoose": "^4.13.4",
     "socket.io": "^2.0.4",
     "socket.io-client": "^2.0.4"
+  },
+  "devDependencies": {
+    "superagent": "^3.8.1"
   }
 }

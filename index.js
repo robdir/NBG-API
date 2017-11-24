@@ -1,3 +1,4 @@
+
 var bol = require ('bolcom') ('1673B7353F954E90916BFD4931E48C2A');
 const express = require('express')
 const cors = require('cors')
@@ -18,14 +19,15 @@ app.use(cors())
     }
 
     for (var p in data.products) {
+
       var product = data.products[p];
       books.push(product.title + ' - €' + product.offerData.offers[0].price)
     }
   })
 
-app.get('/', (req, res) => {
-  res.send(books)
 
+app.get('/books', (req, res) => {
+  res.send(books)
 })
 
 app.listen(PORT, () => {

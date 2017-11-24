@@ -1,5 +1,4 @@
 
-var bol = require ('bolcom') ('1673B7353F954E90916BFD4931E48C2A');
 const express = require('express')
 const cors = require('cors')
 

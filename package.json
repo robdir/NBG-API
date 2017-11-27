@@ -19,5 +19,10 @@
   },
   "devDependencies": {
     "superagent": "^3.8.1"
+  },
+  "engines": {
+    "node": "8.5.x",
+    "npm": "5.3.x",
+    "yarn": "1.2.x"
   }
 }

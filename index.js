@@ -6,7 +6,7 @@ const cors = require('cors')
 const PORT = process.env.PORT || 3030
 let app = express()
 var books = []
-const SPRINGEST_KEY = process.env.SPRINGEST_KEY
+const SPRINGEST_KEY = process.env.SPINGEST_KEY
 
 app.use(cors())
 
@@ -32,15 +32,15 @@ app.get('/books', (req, res) => {
 var url = `https://api.springest.nl/trainings.json?api_key=${SPRINGEST_KEY}&query=Webdeveloper`
 
 var req = https.get(url, function(res) {
-  console.log('STATUS: ' + res.statusCode);
-  console.log('HEADERS: ' + JSON.stringify(res.headers));
 
     var bodyChunks = [];
      res.on('data', function(chunk) {
-       console.log("CHUNK", chunk)
        bodyChunks.push(chunk);
      }).on('end', function() {
-       var body = Buffer.concat(bodyChunks);
+       var body = []
+       bodyChunks = bodyChunks.toString()
+       body.push(JSON.parse(bodyChunks));
+
        app.get('/courses', (req, res) => {
          res.send(body)
        })

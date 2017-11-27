@@ -21,7 +21,9 @@ bol.catalog.search ({ q: 'Web Developer' }, function (err, data) {
     for (var p in data.products) {
 
       var product = data.products[p];
-      books.push(product.title + ' - €' + product.offerData.offers[0].price)
+
+      books.push([product.title + ' - €' + product.offerData.offers[0].price, product.media] )
+
     }
   })
 

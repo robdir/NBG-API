@@ -40,7 +40,7 @@ var req = https.get(url, function(res) {
        bodyChunks.push(chunk);
      }).on('end', function() {
        var body = []
-       bodyChunks = bodyChunks.toString()
+       bodyChunks = bodyChunks.map((chunk) => chunk.toString()).join('')
        body.push(JSON.parse(bodyChunks));
 
        app.get('/courses', (req, res) => {
